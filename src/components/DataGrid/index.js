@@ -47,7 +47,15 @@ const DataTable = () => {
   console.log("TD", tableData);
 
   let rows = [];
-  tableData.map((user) => rows.push({ phone: user.phone }));
+  tableData.map((user) =>
+    rows.push({
+      phone: user.phone,
+      name: user.name.first + " " + user.name.last,
+      email: user.email,
+      dob: user.dob.date,
+      image: user.picture.medium,
+    })
+  );
 
   console.log(rows);
 
