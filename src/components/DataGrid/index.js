@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { DataGrid, GridRowsProp, GridColDef } from "@material-ui/data-grid";
+import { DataGrid } from "@material-ui/data-grid";
 import "./style.css";
 import API from "../../utils/API";
 
@@ -29,6 +29,7 @@ const DataTable = () => {
   }, []);
 
   let rows = [];
+
   tableData.map((user) =>
     rows.push({
       id: user.login.uuid,
