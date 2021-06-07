@@ -2,7 +2,7 @@
 
 ## Links:
 
-Deployed Application:  
+Deployed Application: https://mbussert.github.io/react-employee-directory/  
 Repository: https://github.com/mbussert/react-employee-directory
 
 ## Description:
