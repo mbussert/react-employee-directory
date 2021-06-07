@@ -1,14 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import DataTable from "./components/DataGrid";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <DataTable></DataTable>
-      </div>
-    </Router>
+    <div>
+      <Header></Header>
+      <DataTable></DataTable>
+    </div>
   );
 }
 

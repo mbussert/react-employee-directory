@@ -8,20 +8,40 @@ const DataTable = () => {
 
   const columns = [
     {
-      field: "image",
-      headerName: "Image",
-      sortable: false,
-      width: 500,
+      field: "name",
+      headerName: "Name",
+      width: 250,
+      headerClassName: "table-head",
     },
-    { field: "name", headerName: "Name", width: 200 },
-    { field: "phone", headerName: "Phone", width: 200 },
-    { field: "email", headerName: "Email", width: 280 },
-    { field: "country", headerName: "Country", width: 150 },
+    {
+      field: "username",
+      headerName: "Username",
+      width: 250,
+      headerClassName: "table-head",
+    },
+    {
+      field: "phone",
+      headerName: "Phone",
+      width: 200,
+      headerClassName: "table-head",
+    },
+    {
+      field: "email",
+      headerName: "Email",
+      width: 300,
+      headerClassName: "table-head",
+    },
+    {
+      field: "country",
+      headerName: "Country",
+      width: 175,
+      headerClassName: "table-head",
+    },
   ];
 
   useEffect(() => {
     async function fetchData() {
-      const request = await API.get("https://randomuser.me/api/?results=20");
+      const request = await API.get("https://randomuser.me/api/?results=25");
       setTableData(request.data.results);
       return request;
     }
@@ -37,14 +57,14 @@ const DataTable = () => {
       name: user.name.first + " " + user.name.last,
       email: user.email,
       country: user.location.country,
-      image: user.picture.medium,
+      username: user.login.username,
     })
   );
 
   console.log(rows);
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "1177px", margin: "auto" }}>
       <DataGrid
         autoHeight
         sortModel={[
